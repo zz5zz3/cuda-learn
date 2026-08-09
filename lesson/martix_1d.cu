@@ -1,5 +1,5 @@
 #include<iostream>
-#include"tools/common.cuh"
+#include"../tools/common.cuh"
 
 using namespace std;
 

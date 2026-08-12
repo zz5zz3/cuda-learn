@@ -1,0 +1,6 @@
+/root/cuda_projects/build/CMakeFiles/vector_add.dir
+/root/cuda_projects/build/CMakeFiles/reduction.dir
+/root/cuda_projects/build/CMakeFiles/WarpShuffleReduction.dir
+/root/cuda_projects/build/CMakeFiles/WarpShuffleReduction_alltoone.dir
+/root/cuda_projects/build/CMakeFiles/edit_cache.dir
+/root/cuda_projects/build/CMakeFiles/rebuild_cache.dir

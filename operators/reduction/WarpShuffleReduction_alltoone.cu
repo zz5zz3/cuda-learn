@@ -4,12 +4,46 @@
 #include"cuda_timer.cuh"
 #include <time.h>
 
-__global__ void vector_add(float *a,float *b,float *c,int n){
-    const int bid=blockIdx.x;
-    const int tid=threadIdx.x;
-    int id=bid*blockDim.x+tid;
+__device__ float WarpReduceSum(float val){
+    
+    for(int offset=16;offset>0;offset/=2){
+        val+=__shfl_down_sync(0xffffffff,val,offset);
+    }
+    return val;
+}
+
+__global__ void WarpShuffleReduction(float *input,float *output,int n){
+    extern __shared__ float shared_memory[];
+    int bid = blockIdx.x;
+    int tid = threadIdx.x;
+    int id = bid*blockDim.x + tid;
+    int warp_num = (blockDim.x+31)/32;
+    int warp_id = tid / 32;
+    int lane    = tid % 32;
+
+    float val=0;
     if(id<n){
-    c[id]=a[id]+b[id];}
+        val=input[id];
+    }
+    val=WarpReduceSum(val);
+
+    if(lane==0){
+    shared_memory[warp_id]=val;
+    }
+    __syncthreads();
+
+    if(warp_id==0){
+        if(lane<warp_num){
+            val=shared_memory[lane];
+        }
+        else{
+            val=0.0f;
+        }
+        val=WarpReduceSum(val);
+        if(lane == 0){
+            output[bid] = val;
+        }
+    }
 
 }
 
@@ -51,8 +85,9 @@ int main(){
     float* cudaA;
     float* cudaB;
     float* cudaC;
+    
     CudaTimer cudatimer;
-
+    
     CUDA_CHECK(cudaMalloc((float**)&cudaA,byte));
     CUDA_CHECK(cudaMalloc(&cudaB,byte));
     CUDA_CHECK(cudaMalloc(&cudaC,byte));
@@ -64,35 +99,52 @@ int main(){
     CUDA_CHECK(cudaMemcpy(cudaB,hostB,byte,cudaMemcpyHostToDevice));
 
 /*3 GPU计算区*/
-    dim3 block(32);
-    dim3 grid((elem + block.x - 1) / block.x);
+    dim3 block(64);
+
+    int memory_size=block.x*sizeof(float);
+    int current_n=elem;
+    dim3 grid((current_n + block.x - 1) / block.x);
+
+    float* temp;
     cudatimer.start();
-    vector_add<<<grid,block>>>(cudaA,cudaB,cudaC,elem);
+
+    while (current_n>1)
+    {
+        dim3 grid((current_n + block.x - 1) / block.x);
+        WarpShuffleReduction<<<grid,block,memory_size>>>(cudaA,cudaC,current_n);
+      
+        temp=cudaA;
+        cudaA=cudaC;
+        cudaC=temp;
+        current_n=grid.x;
+    }
+    
+
+
     float elapsed_ms=cudatimer.stop();
 
     CUDA_CHECK(cudaDeviceSynchronize());
-    CUDA_CHECK(cudaMemcpy(hostC,cudaC,byte,cudaMemcpyDeviceToHost));
+    CUDA_CHECK(cudaMemcpy(hostC,cudaA,byte,cudaMemcpyDeviceToHost));
 
 /*4 CPU计算区*/
     clock_t  start=clock();
     for(int i=0;i<elem;i++){
-        hostRef[i]=hostA[i]+hostB[i];
-    }
+        hostRef[i]+=hostA[i];
+        }
+    
     clock_t  stop=clock();
     double time=(stop-start)*1000/CLOCKS_PER_SEC;
 /* 5 结果验证区 */
 
-if(hostC[2]==hostRef[2])
-printf("PASSED");
+printf("gpu:%0.2f,cpu:%0.2f,PASSED?",hostC[0],hostRef[0]);
 
 for(int i=0;i<10;i++){
     printf("cuda:%0.2f+%0.2f=%0.2f\n",hostA[i],hostB[i],hostC[i]);
 }
-
 printf("cudatime:%0.2fms,cputime:%0.2fms\n",elapsed_ms,time);
 
 double total_bytes =
-    3.0 * elem * sizeof(float);
+    (double) (elem * sizeof(float)+grid.x* sizeof(float));
 
 double bandwidth =
     total_bytes /

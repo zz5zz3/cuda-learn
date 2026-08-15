@@ -168,6 +168,43 @@ WarpShuffleReduction_alltoone/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WarpShuffleReduction_alltoone.dir/build.make CMakeFiles/WarpShuffleReduction_alltoone.dir/build
 .PHONY : WarpShuffleReduction_alltoone/fast
 
+#=============================================================================
+# Target rules for targets named MatrixTranspose
+
+# Build rule for target.
+MatrixTranspose: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MatrixTranspose
+.PHONY : MatrixTranspose
+
+# fast build rule for target.
+MatrixTranspose/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixTranspose.dir/build.make CMakeFiles/MatrixTranspose.dir/build
+.PHONY : MatrixTranspose/fast
+
+operators/MatrixTranspose/MatrixTranspose.o: operators/MatrixTranspose/MatrixTranspose.cu.o
+.PHONY : operators/MatrixTranspose/MatrixTranspose.o
+
+# target to build an object file
+operators/MatrixTranspose/MatrixTranspose.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixTranspose.dir/build.make CMakeFiles/MatrixTranspose.dir/operators/MatrixTranspose/MatrixTranspose.cu.o
+.PHONY : operators/MatrixTranspose/MatrixTranspose.cu.o
+
+operators/MatrixTranspose/MatrixTranspose.i: operators/MatrixTranspose/MatrixTranspose.cu.i
+.PHONY : operators/MatrixTranspose/MatrixTranspose.i
+
+# target to preprocess a source file
+operators/MatrixTranspose/MatrixTranspose.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixTranspose.dir/build.make CMakeFiles/MatrixTranspose.dir/operators/MatrixTranspose/MatrixTranspose.cu.i
+.PHONY : operators/MatrixTranspose/MatrixTranspose.cu.i
+
+operators/MatrixTranspose/MatrixTranspose.s: operators/MatrixTranspose/MatrixTranspose.cu.s
+.PHONY : operators/MatrixTranspose/MatrixTranspose.s
+
+# target to generate assembly for a file
+operators/MatrixTranspose/MatrixTranspose.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixTranspose.dir/build.make CMakeFiles/MatrixTranspose.dir/operators/MatrixTranspose/MatrixTranspose.cu.s
+.PHONY : operators/MatrixTranspose/MatrixTranspose.cu.s
+
 operators/reduction/WarpShuffleReduction.o: operators/reduction/WarpShuffleReduction.cu.o
 .PHONY : operators/reduction/WarpShuffleReduction.o
 
@@ -272,10 +309,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... MatrixTranspose"
 	@echo "... WarpShuffleReduction"
 	@echo "... WarpShuffleReduction_alltoone"
 	@echo "... reduction"
 	@echo "... vector_add"
+	@echo "... operators/MatrixTranspose/MatrixTranspose.o"
+	@echo "... operators/MatrixTranspose/MatrixTranspose.i"
+	@echo "... operators/MatrixTranspose/MatrixTranspose.s"
 	@echo "... operators/reduction/WarpShuffleReduction.o"
 	@echo "... operators/reduction/WarpShuffleReduction.i"
 	@echo "... operators/reduction/WarpShuffleReduction.s"

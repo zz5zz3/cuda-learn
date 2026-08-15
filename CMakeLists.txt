@@ -39,3 +39,11 @@ add_executable(WarpShuffleReduction_alltoone
 target_include_directories(WarpShuffleReduction_alltoone  PRIVATE
     ${PROJECT_SOURCE_DIR}/include
 )
+
+add_executable(MatrixTranspose
+    operators/MatrixTranspose/MatrixTranspose.cu
+)
+
+target_include_directories(MatrixTranspose  PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)

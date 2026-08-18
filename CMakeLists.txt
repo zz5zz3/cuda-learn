@@ -45,5 +45,22 @@ add_executable(MatrixTranspose
 )
 
 target_include_directories(MatrixTranspose  PRIVATE
+    ${PROJECT_SOURCE_DIR}/include)
+
+
+add_executable(GEMM_native
+    operators/GEMM/main.cu
+)
+
+target_include_directories(GEMM_native  PRIVATE
     ${PROJECT_SOURCE_DIR}/include
 )
+
+add_executable(GEMM_memory
+    operators/GEMM/Tiled_GEMM.cu
+)
+
+target_include_directories(GEMM_memory  PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+

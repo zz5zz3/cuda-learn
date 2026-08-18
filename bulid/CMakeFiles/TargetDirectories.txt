@@ -1,7 +1,0 @@
-/root/cuda_projects/bulid/CMakeFiles/vector_add.dir
-/root/cuda_projects/bulid/CMakeFiles/reduction.dir
-/root/cuda_projects/bulid/CMakeFiles/WarpShuffleReduction.dir
-/root/cuda_projects/bulid/CMakeFiles/WarpShuffleReduction_alltoone.dir
-/root/cuda_projects/bulid/CMakeFiles/MatrixTranspose.dir
-/root/cuda_projects/bulid/CMakeFiles/edit_cache.dir
-/root/cuda_projects/bulid/CMakeFiles/rebuild_cache.dir

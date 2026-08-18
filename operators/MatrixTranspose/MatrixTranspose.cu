@@ -9,6 +9,12 @@
 __global__ void MatrixTranspose(float* A,float* B,float* C,int raw,int col){
      __shared__ float tile[32][33];
 
+    int bid = blockIdx.y * gridDim.x +blockIdx.x;
+    int tid = threadIdx.y + blockDim.x + threadIdx.x;
+    int id  = bid * blockDim.x *blockDim.y + tid;
+
+    
+
     int x   = blockDim.x * blockIdx.x + threadIdx.x;
     int y   = blockDim.y * blockIdx.y + threadIdx.y;
     int tx  = threadIdx.x;
@@ -118,8 +124,9 @@ hostA[5] = 6;
 
 /*4 CPU计算区*/
     clock_t  start=clock();
-    for(int i=0;i<elem;i++){
-        hostRef[i]+=hostA[i];
+    for(int i=0;i<rows;i++)
+        for(int j=0;j<cols;j++){
+            hostRef[j * rows + i]=hostA[i*cols + j];
         }
     
     clock_t  stop=clock();
@@ -127,7 +134,7 @@ hostA[5] = 6;
 /* 5 结果验证区 */
 
 for(int i=0;i<6;i++){
-    printf("host:%0.2f\n",hostA[i]);
+    printf("host:%0.2f\n",hostRef[i]);
 }
 for(int i=0;i<6;i++){
     printf("cuda:%0.2f\n",hostC[i]);

@@ -47,4 +47,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/WarpShuffleReduction.dir/DependInfo.cmake"
   "CMakeFiles/WarpShuffleReduction_alltoone.dir/DependInfo.cmake"
   "CMakeFiles/MatrixTranspose.dir/DependInfo.cmake"
+  "CMakeFiles/GEMM_native.dir/DependInfo.cmake"
+  "CMakeFiles/GEMM_memory.dir/DependInfo.cmake"
   )

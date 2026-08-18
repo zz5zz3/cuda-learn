@@ -181,6 +181,80 @@ MatrixTranspose/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixTranspose.dir/build.make CMakeFiles/MatrixTranspose.dir/build
 .PHONY : MatrixTranspose/fast
 
+#=============================================================================
+# Target rules for targets named GEMM_native
+
+# Build rule for target.
+GEMM_native: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GEMM_native
+.PHONY : GEMM_native
+
+# fast build rule for target.
+GEMM_native/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_native.dir/build.make CMakeFiles/GEMM_native.dir/build
+.PHONY : GEMM_native/fast
+
+#=============================================================================
+# Target rules for targets named GEMM_memory
+
+# Build rule for target.
+GEMM_memory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GEMM_memory
+.PHONY : GEMM_memory
+
+# fast build rule for target.
+GEMM_memory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_memory.dir/build.make CMakeFiles/GEMM_memory.dir/build
+.PHONY : GEMM_memory/fast
+
+operators/GEMM/Tiled_GEMM.o: operators/GEMM/Tiled_GEMM.cu.o
+.PHONY : operators/GEMM/Tiled_GEMM.o
+
+# target to build an object file
+operators/GEMM/Tiled_GEMM.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_memory.dir/build.make CMakeFiles/GEMM_memory.dir/operators/GEMM/Tiled_GEMM.cu.o
+.PHONY : operators/GEMM/Tiled_GEMM.cu.o
+
+operators/GEMM/Tiled_GEMM.i: operators/GEMM/Tiled_GEMM.cu.i
+.PHONY : operators/GEMM/Tiled_GEMM.i
+
+# target to preprocess a source file
+operators/GEMM/Tiled_GEMM.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_memory.dir/build.make CMakeFiles/GEMM_memory.dir/operators/GEMM/Tiled_GEMM.cu.i
+.PHONY : operators/GEMM/Tiled_GEMM.cu.i
+
+operators/GEMM/Tiled_GEMM.s: operators/GEMM/Tiled_GEMM.cu.s
+.PHONY : operators/GEMM/Tiled_GEMM.s
+
+# target to generate assembly for a file
+operators/GEMM/Tiled_GEMM.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_memory.dir/build.make CMakeFiles/GEMM_memory.dir/operators/GEMM/Tiled_GEMM.cu.s
+.PHONY : operators/GEMM/Tiled_GEMM.cu.s
+
+operators/GEMM/main.o: operators/GEMM/main.cu.o
+.PHONY : operators/GEMM/main.o
+
+# target to build an object file
+operators/GEMM/main.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_native.dir/build.make CMakeFiles/GEMM_native.dir/operators/GEMM/main.cu.o
+.PHONY : operators/GEMM/main.cu.o
+
+operators/GEMM/main.i: operators/GEMM/main.cu.i
+.PHONY : operators/GEMM/main.i
+
+# target to preprocess a source file
+operators/GEMM/main.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_native.dir/build.make CMakeFiles/GEMM_native.dir/operators/GEMM/main.cu.i
+.PHONY : operators/GEMM/main.cu.i
+
+operators/GEMM/main.s: operators/GEMM/main.cu.s
+.PHONY : operators/GEMM/main.s
+
+# target to generate assembly for a file
+operators/GEMM/main.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_native.dir/build.make CMakeFiles/GEMM_native.dir/operators/GEMM/main.cu.s
+.PHONY : operators/GEMM/main.cu.s
+
 operators/MatrixTranspose/MatrixTranspose.o: operators/MatrixTranspose/MatrixTranspose.cu.o
 .PHONY : operators/MatrixTranspose/MatrixTranspose.o
 
@@ -309,11 +383,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... GEMM_memory"
+	@echo "... GEMM_native"
 	@echo "... MatrixTranspose"
 	@echo "... WarpShuffleReduction"
 	@echo "... WarpShuffleReduction_alltoone"
 	@echo "... reduction"
 	@echo "... vector_add"
+	@echo "... operators/GEMM/Tiled_GEMM.o"
+	@echo "... operators/GEMM/Tiled_GEMM.i"
+	@echo "... operators/GEMM/Tiled_GEMM.s"
+	@echo "... operators/GEMM/main.o"
+	@echo "... operators/GEMM/main.i"
+	@echo "... operators/GEMM/main.s"
 	@echo "... operators/MatrixTranspose/MatrixTranspose.o"
 	@echo "... operators/MatrixTranspose/MatrixTranspose.i"
 	@echo "... operators/MatrixTranspose/MatrixTranspose.s"

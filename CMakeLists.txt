@@ -8,59 +8,75 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 
-add_executable(vector_add
+
+# ============================================================
+# 公共函数：添加一个 CUDA 可执行程序
+# ============================================================
+function(add_cuda_demo target source)
+
+    add_executable(${target}
+        ${source}
+    )
+
+    target_include_directories(${target} PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+    )
+
+endfunction()
+
+
+# ============================================================
+# Vector Add
+# ============================================================
+add_cuda_demo(vector_add
     operators/vector_add/main.cu
 )
 
-target_include_directories(vector_add PRIVATE
-    ${PROJECT_SOURCE_DIR}/include
-)
 
-add_executable(reduction
+# ============================================================
+# Reduction
+# ============================================================
+add_cuda_demo(reduction
     operators/reduction/main.cu
 )
 
-target_include_directories(reduction PRIVATE
-    ${PROJECT_SOURCE_DIR}/include
-)
-
-add_executable(WarpShuffleReduction
+add_cuda_demo(WarpShuffleReduction
     operators/reduction/WarpShuffleReduction.cu
 )
 
-target_include_directories(WarpShuffleReduction  PRIVATE
-    ${PROJECT_SOURCE_DIR}/include
-)
-
-add_executable(WarpShuffleReduction_alltoone
+add_cuda_demo(WarpShuffleReduction_alltoone
     operators/reduction/WarpShuffleReduction_alltoone.cu
 )
 
-target_include_directories(WarpShuffleReduction_alltoone  PRIVATE
-    ${PROJECT_SOURCE_DIR}/include
-)
 
-add_executable(MatrixTranspose
+# ============================================================
+# Matrix Transpose
+# ============================================================
+add_cuda_demo(MatrixTranspose
     operators/MatrixTranspose/MatrixTranspose.cu
 )
 
-target_include_directories(MatrixTranspose  PRIVATE
-    ${PROJECT_SOURCE_DIR}/include)
 
-
-add_executable(GEMM_native
+# ============================================================
+# GEMM
+# ============================================================
+add_cuda_demo(GEMM_native
     operators/GEMM/main.cu
 )
 
-target_include_directories(GEMM_native  PRIVATE
-    ${PROJECT_SOURCE_DIR}/include
-)
-
-add_executable(GEMM_memory
+add_cuda_demo(GEMM_memory
     operators/GEMM/Tiled_GEMM.cu
 )
 
-target_include_directories(GEMM_memory  PRIVATE
-    ${PROJECT_SOURCE_DIR}/include
+add_cuda_demo(GEMM_Register
+    operators/GEMM/Register_GEMM.cu
+)
+
+
+# ============================================================
+# Softmax
+# ============================================================
+add_cuda_demo(Softmax
+    operators/softmax/main.cu
 )
 

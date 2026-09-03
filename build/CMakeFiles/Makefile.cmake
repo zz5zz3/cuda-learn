@@ -49,4 +49,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/MatrixTranspose.dir/DependInfo.cmake"
   "CMakeFiles/GEMM_native.dir/DependInfo.cmake"
   "CMakeFiles/GEMM_memory.dir/DependInfo.cmake"
+  "CMakeFiles/GEMM_Register.dir/DependInfo.cmake"
+  "CMakeFiles/Softmax.dir/DependInfo.cmake"
   )

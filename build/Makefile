@@ -207,6 +207,56 @@ GEMM_memory/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_memory.dir/build.make CMakeFiles/GEMM_memory.dir/build
 .PHONY : GEMM_memory/fast
 
+#=============================================================================
+# Target rules for targets named GEMM_Register
+
+# Build rule for target.
+GEMM_Register: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GEMM_Register
+.PHONY : GEMM_Register
+
+# fast build rule for target.
+GEMM_Register/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_Register.dir/build.make CMakeFiles/GEMM_Register.dir/build
+.PHONY : GEMM_Register/fast
+
+#=============================================================================
+# Target rules for targets named Softmax
+
+# Build rule for target.
+Softmax: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Softmax
+.PHONY : Softmax
+
+# fast build rule for target.
+Softmax/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Softmax.dir/build.make CMakeFiles/Softmax.dir/build
+.PHONY : Softmax/fast
+
+operators/GEMM/Register_GEMM.o: operators/GEMM/Register_GEMM.cu.o
+.PHONY : operators/GEMM/Register_GEMM.o
+
+# target to build an object file
+operators/GEMM/Register_GEMM.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_Register.dir/build.make CMakeFiles/GEMM_Register.dir/operators/GEMM/Register_GEMM.cu.o
+.PHONY : operators/GEMM/Register_GEMM.cu.o
+
+operators/GEMM/Register_GEMM.i: operators/GEMM/Register_GEMM.cu.i
+.PHONY : operators/GEMM/Register_GEMM.i
+
+# target to preprocess a source file
+operators/GEMM/Register_GEMM.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_Register.dir/build.make CMakeFiles/GEMM_Register.dir/operators/GEMM/Register_GEMM.cu.i
+.PHONY : operators/GEMM/Register_GEMM.cu.i
+
+operators/GEMM/Register_GEMM.s: operators/GEMM/Register_GEMM.cu.s
+.PHONY : operators/GEMM/Register_GEMM.s
+
+# target to generate assembly for a file
+operators/GEMM/Register_GEMM.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_Register.dir/build.make CMakeFiles/GEMM_Register.dir/operators/GEMM/Register_GEMM.cu.s
+.PHONY : operators/GEMM/Register_GEMM.cu.s
+
 operators/GEMM/Tiled_GEMM.o: operators/GEMM/Tiled_GEMM.cu.o
 .PHONY : operators/GEMM/Tiled_GEMM.o
 
@@ -351,6 +401,30 @@ operators/reduction/main.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reduction.dir/build.make CMakeFiles/reduction.dir/operators/reduction/main.cu.s
 .PHONY : operators/reduction/main.cu.s
 
+operators/softmax/main.o: operators/softmax/main.cu.o
+.PHONY : operators/softmax/main.o
+
+# target to build an object file
+operators/softmax/main.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Softmax.dir/build.make CMakeFiles/Softmax.dir/operators/softmax/main.cu.o
+.PHONY : operators/softmax/main.cu.o
+
+operators/softmax/main.i: operators/softmax/main.cu.i
+.PHONY : operators/softmax/main.i
+
+# target to preprocess a source file
+operators/softmax/main.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Softmax.dir/build.make CMakeFiles/Softmax.dir/operators/softmax/main.cu.i
+.PHONY : operators/softmax/main.cu.i
+
+operators/softmax/main.s: operators/softmax/main.cu.s
+.PHONY : operators/softmax/main.s
+
+# target to generate assembly for a file
+operators/softmax/main.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Softmax.dir/build.make CMakeFiles/Softmax.dir/operators/softmax/main.cu.s
+.PHONY : operators/softmax/main.cu.s
+
 operators/vector_add/main.o: operators/vector_add/main.cu.o
 .PHONY : operators/vector_add/main.o
 
@@ -383,13 +457,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... GEMM_Register"
 	@echo "... GEMM_memory"
 	@echo "... GEMM_native"
 	@echo "... MatrixTranspose"
+	@echo "... Softmax"
 	@echo "... WarpShuffleReduction"
 	@echo "... WarpShuffleReduction_alltoone"
 	@echo "... reduction"
 	@echo "... vector_add"
+	@echo "... operators/GEMM/Register_GEMM.o"
+	@echo "... operators/GEMM/Register_GEMM.i"
+	@echo "... operators/GEMM/Register_GEMM.s"
 	@echo "... operators/GEMM/Tiled_GEMM.o"
 	@echo "... operators/GEMM/Tiled_GEMM.i"
 	@echo "... operators/GEMM/Tiled_GEMM.s"
@@ -408,6 +487,9 @@ help:
 	@echo "... operators/reduction/main.o"
 	@echo "... operators/reduction/main.i"
 	@echo "... operators/reduction/main.s"
+	@echo "... operators/softmax/main.o"
+	@echo "... operators/softmax/main.i"
+	@echo "... operators/softmax/main.s"
 	@echo "... operators/vector_add/main.o"
 	@echo "... operators/vector_add/main.i"
 	@echo "... operators/vector_add/main.s"

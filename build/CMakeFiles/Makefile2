@@ -70,6 +70,8 @@ all: CMakeFiles/WarpShuffleReduction_alltoone.dir/all
 all: CMakeFiles/MatrixTranspose.dir/all
 all: CMakeFiles/GEMM_native.dir/all
 all: CMakeFiles/GEMM_memory.dir/all
+all: CMakeFiles/GEMM_Register.dir/all
+all: CMakeFiles/Softmax.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -84,6 +86,8 @@ clean: CMakeFiles/WarpShuffleReduction_alltoone.dir/clean
 clean: CMakeFiles/MatrixTranspose.dir/clean
 clean: CMakeFiles/GEMM_native.dir/clean
 clean: CMakeFiles/GEMM_memory.dir/clean
+clean: CMakeFiles/GEMM_Register.dir/clean
+clean: CMakeFiles/Softmax.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -93,7 +97,7 @@ clean: CMakeFiles/GEMM_memory.dir/clean
 CMakeFiles/vector_add.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_add.dir/build.make CMakeFiles/vector_add.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vector_add.dir/build.make CMakeFiles/vector_add.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=13,14 "Built target vector_add"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=17,18 "Built target vector_add"
 .PHONY : CMakeFiles/vector_add.dir/all
 
 # Build rule for subdir invocation for target.
@@ -119,7 +123,7 @@ CMakeFiles/vector_add.dir/clean:
 CMakeFiles/reduction.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reduction.dir/build.make CMakeFiles/reduction.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reduction.dir/build.make CMakeFiles/reduction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=11,12 "Built target reduction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=15,16 "Built target reduction"
 .PHONY : CMakeFiles/reduction.dir/all
 
 # Build rule for subdir invocation for target.
@@ -145,7 +149,7 @@ CMakeFiles/reduction.dir/clean:
 CMakeFiles/WarpShuffleReduction.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WarpShuffleReduction.dir/build.make CMakeFiles/WarpShuffleReduction.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WarpShuffleReduction.dir/build.make CMakeFiles/WarpShuffleReduction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=7,8 "Built target WarpShuffleReduction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=11,12 "Built target WarpShuffleReduction"
 .PHONY : CMakeFiles/WarpShuffleReduction.dir/all
 
 # Build rule for subdir invocation for target.
@@ -171,7 +175,7 @@ CMakeFiles/WarpShuffleReduction.dir/clean:
 CMakeFiles/WarpShuffleReduction_alltoone.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WarpShuffleReduction_alltoone.dir/build.make CMakeFiles/WarpShuffleReduction_alltoone.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WarpShuffleReduction_alltoone.dir/build.make CMakeFiles/WarpShuffleReduction_alltoone.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=9,10 "Built target WarpShuffleReduction_alltoone"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=13,14 "Built target WarpShuffleReduction_alltoone"
 .PHONY : CMakeFiles/WarpShuffleReduction_alltoone.dir/all
 
 # Build rule for subdir invocation for target.
@@ -197,7 +201,7 @@ CMakeFiles/WarpShuffleReduction_alltoone.dir/clean:
 CMakeFiles/MatrixTranspose.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixTranspose.dir/build.make CMakeFiles/MatrixTranspose.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixTranspose.dir/build.make CMakeFiles/MatrixTranspose.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=5,6 "Built target MatrixTranspose"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=7,8 "Built target MatrixTranspose"
 .PHONY : CMakeFiles/MatrixTranspose.dir/all
 
 # Build rule for subdir invocation for target.
@@ -223,7 +227,7 @@ CMakeFiles/MatrixTranspose.dir/clean:
 CMakeFiles/GEMM_native.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_native.dir/build.make CMakeFiles/GEMM_native.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_native.dir/build.make CMakeFiles/GEMM_native.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=3,4 "Built target GEMM_native"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=5,6 "Built target GEMM_native"
 .PHONY : CMakeFiles/GEMM_native.dir/all
 
 # Build rule for subdir invocation for target.
@@ -249,7 +253,7 @@ CMakeFiles/GEMM_native.dir/clean:
 CMakeFiles/GEMM_memory.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_memory.dir/build.make CMakeFiles/GEMM_memory.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_memory.dir/build.make CMakeFiles/GEMM_memory.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=1,2 "Built target GEMM_memory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=3,4 "Built target GEMM_memory"
 .PHONY : CMakeFiles/GEMM_memory.dir/all
 
 # Build rule for subdir invocation for target.
@@ -267,6 +271,58 @@ GEMM_memory: CMakeFiles/GEMM_memory.dir/rule
 CMakeFiles/GEMM_memory.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_memory.dir/build.make CMakeFiles/GEMM_memory.dir/clean
 .PHONY : CMakeFiles/GEMM_memory.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/GEMM_Register.dir
+
+# All Build rule for target.
+CMakeFiles/GEMM_Register.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_Register.dir/build.make CMakeFiles/GEMM_Register.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_Register.dir/build.make CMakeFiles/GEMM_Register.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=1,2 "Built target GEMM_Register"
+.PHONY : CMakeFiles/GEMM_Register.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/GEMM_Register.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cuda_projects/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GEMM_Register.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cuda_projects/build/CMakeFiles 0
+.PHONY : CMakeFiles/GEMM_Register.dir/rule
+
+# Convenience name for target.
+GEMM_Register: CMakeFiles/GEMM_Register.dir/rule
+.PHONY : GEMM_Register
+
+# clean rule for target.
+CMakeFiles/GEMM_Register.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_Register.dir/build.make CMakeFiles/GEMM_Register.dir/clean
+.PHONY : CMakeFiles/GEMM_Register.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Softmax.dir
+
+# All Build rule for target.
+CMakeFiles/Softmax.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Softmax.dir/build.make CMakeFiles/Softmax.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Softmax.dir/build.make CMakeFiles/Softmax.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cuda_projects/build/CMakeFiles --progress-num=9,10 "Built target Softmax"
+.PHONY : CMakeFiles/Softmax.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Softmax.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cuda_projects/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Softmax.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cuda_projects/build/CMakeFiles 0
+.PHONY : CMakeFiles/Softmax.dir/rule
+
+# Convenience name for target.
+Softmax: CMakeFiles/Softmax.dir/rule
+.PHONY : Softmax
+
+# clean rule for target.
+CMakeFiles/Softmax.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Softmax.dir/build.make CMakeFiles/Softmax.dir/clean
+.PHONY : CMakeFiles/Softmax.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

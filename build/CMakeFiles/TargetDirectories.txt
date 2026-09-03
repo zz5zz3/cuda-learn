@@ -5,5 +5,7 @@
 /root/cuda_projects/build/CMakeFiles/MatrixTranspose.dir
 /root/cuda_projects/build/CMakeFiles/GEMM_native.dir
 /root/cuda_projects/build/CMakeFiles/GEMM_memory.dir
+/root/cuda_projects/build/CMakeFiles/GEMM_Register.dir
+/root/cuda_projects/build/CMakeFiles/Softmax.dir
 /root/cuda_projects/build/CMakeFiles/edit_cache.dir
 /root/cuda_projects/build/CMakeFiles/rebuild_cache.dir

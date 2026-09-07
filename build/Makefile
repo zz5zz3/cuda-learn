@@ -233,6 +233,19 @@ Softmax/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Softmax.dir/build.make CMakeFiles/Softmax.dir/build
 .PHONY : Softmax/fast
 
+#=============================================================================
+# Target rules for targets named LayerNorm
+
+# Build rule for target.
+LayerNorm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 LayerNorm
+.PHONY : LayerNorm
+
+# fast build rule for target.
+LayerNorm/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LayerNorm.dir/build.make CMakeFiles/LayerNorm.dir/build
+.PHONY : LayerNorm/fast
+
 operators/GEMM/Register_GEMM.o: operators/GEMM/Register_GEMM.cu.o
 .PHONY : operators/GEMM/Register_GEMM.o
 
@@ -304,6 +317,30 @@ operators/GEMM/main.s: operators/GEMM/main.cu.s
 operators/GEMM/main.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GEMM_native.dir/build.make CMakeFiles/GEMM_native.dir/operators/GEMM/main.cu.s
 .PHONY : operators/GEMM/main.cu.s
+
+operators/LayerNorm/main.o: operators/LayerNorm/main.cu.o
+.PHONY : operators/LayerNorm/main.o
+
+# target to build an object file
+operators/LayerNorm/main.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LayerNorm.dir/build.make CMakeFiles/LayerNorm.dir/operators/LayerNorm/main.cu.o
+.PHONY : operators/LayerNorm/main.cu.o
+
+operators/LayerNorm/main.i: operators/LayerNorm/main.cu.i
+.PHONY : operators/LayerNorm/main.i
+
+# target to preprocess a source file
+operators/LayerNorm/main.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LayerNorm.dir/build.make CMakeFiles/LayerNorm.dir/operators/LayerNorm/main.cu.i
+.PHONY : operators/LayerNorm/main.cu.i
+
+operators/LayerNorm/main.s: operators/LayerNorm/main.cu.s
+.PHONY : operators/LayerNorm/main.s
+
+# target to generate assembly for a file
+operators/LayerNorm/main.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LayerNorm.dir/build.make CMakeFiles/LayerNorm.dir/operators/LayerNorm/main.cu.s
+.PHONY : operators/LayerNorm/main.cu.s
 
 operators/MatrixTranspose/MatrixTranspose.o: operators/MatrixTranspose/MatrixTranspose.cu.o
 .PHONY : operators/MatrixTranspose/MatrixTranspose.o
@@ -460,6 +497,7 @@ help:
 	@echo "... GEMM_Register"
 	@echo "... GEMM_memory"
 	@echo "... GEMM_native"
+	@echo "... LayerNorm"
 	@echo "... MatrixTranspose"
 	@echo "... Softmax"
 	@echo "... WarpShuffleReduction"
@@ -475,6 +513,9 @@ help:
 	@echo "... operators/GEMM/main.o"
 	@echo "... operators/GEMM/main.i"
 	@echo "... operators/GEMM/main.s"
+	@echo "... operators/LayerNorm/main.o"
+	@echo "... operators/LayerNorm/main.i"
+	@echo "... operators/LayerNorm/main.s"
 	@echo "... operators/MatrixTranspose/MatrixTranspose.o"
 	@echo "... operators/MatrixTranspose/MatrixTranspose.i"
 	@echo "... operators/MatrixTranspose/MatrixTranspose.s"

@@ -80,3 +80,9 @@ add_cuda_demo(Softmax
     operators/softmax/main.cu
 )
 
+# ============================================================
+# LayerNorm
+# ============================================================
+add_cuda_demo(LayerNorm
+    operators/LayerNorm/main.cu
+)

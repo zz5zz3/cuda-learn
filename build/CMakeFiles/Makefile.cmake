@@ -52,4 +52,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/GEMM_Register.dir/DependInfo.cmake"
   "CMakeFiles/Softmax.dir/DependInfo.cmake"
   "CMakeFiles/LayerNorm.dir/DependInfo.cmake"
+  "CMakeFiles/FlashAttention_native.dir/DependInfo.cmake"
+  "CMakeFiles/FlashAttentionv1.dir/DependInfo.cmake"
+  "CMakeFiles/wmma.dir/DependInfo.cmake"
+  "CMakeFiles/TiledWMMA.dir/DependInfo.cmake"
   )

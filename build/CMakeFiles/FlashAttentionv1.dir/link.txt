@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/FlashAttentionv1.dir/operators/FlashAttention/flashattentionv1.cu.o -o FlashAttentionv1  -lcudadevrt -lcudart_static -lrt -lpthread -ldl  -L"/usr/local/cuda-11.8/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda-11.8/targets/x86_64-linux/lib"

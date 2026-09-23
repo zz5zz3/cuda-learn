@@ -246,6 +246,106 @@ LayerNorm/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LayerNorm.dir/build.make CMakeFiles/LayerNorm.dir/build
 .PHONY : LayerNorm/fast
 
+#=============================================================================
+# Target rules for targets named FlashAttention_native
+
+# Build rule for target.
+FlashAttention_native: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FlashAttention_native
+.PHONY : FlashAttention_native
+
+# fast build rule for target.
+FlashAttention_native/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlashAttention_native.dir/build.make CMakeFiles/FlashAttention_native.dir/build
+.PHONY : FlashAttention_native/fast
+
+#=============================================================================
+# Target rules for targets named FlashAttentionv1
+
+# Build rule for target.
+FlashAttentionv1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FlashAttentionv1
+.PHONY : FlashAttentionv1
+
+# fast build rule for target.
+FlashAttentionv1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlashAttentionv1.dir/build.make CMakeFiles/FlashAttentionv1.dir/build
+.PHONY : FlashAttentionv1/fast
+
+#=============================================================================
+# Target rules for targets named wmma
+
+# Build rule for target.
+wmma: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wmma
+.PHONY : wmma
+
+# fast build rule for target.
+wmma/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wmma.dir/build.make CMakeFiles/wmma.dir/build
+.PHONY : wmma/fast
+
+#=============================================================================
+# Target rules for targets named TiledWMMA
+
+# Build rule for target.
+TiledWMMA: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TiledWMMA
+.PHONY : TiledWMMA
+
+# fast build rule for target.
+TiledWMMA/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledWMMA.dir/build.make CMakeFiles/TiledWMMA.dir/build
+.PHONY : TiledWMMA/fast
+
+operators/FlashAttention/flashattentionv1.o: operators/FlashAttention/flashattentionv1.cu.o
+.PHONY : operators/FlashAttention/flashattentionv1.o
+
+# target to build an object file
+operators/FlashAttention/flashattentionv1.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlashAttentionv1.dir/build.make CMakeFiles/FlashAttentionv1.dir/operators/FlashAttention/flashattentionv1.cu.o
+.PHONY : operators/FlashAttention/flashattentionv1.cu.o
+
+operators/FlashAttention/flashattentionv1.i: operators/FlashAttention/flashattentionv1.cu.i
+.PHONY : operators/FlashAttention/flashattentionv1.i
+
+# target to preprocess a source file
+operators/FlashAttention/flashattentionv1.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlashAttentionv1.dir/build.make CMakeFiles/FlashAttentionv1.dir/operators/FlashAttention/flashattentionv1.cu.i
+.PHONY : operators/FlashAttention/flashattentionv1.cu.i
+
+operators/FlashAttention/flashattentionv1.s: operators/FlashAttention/flashattentionv1.cu.s
+.PHONY : operators/FlashAttention/flashattentionv1.s
+
+# target to generate assembly for a file
+operators/FlashAttention/flashattentionv1.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlashAttentionv1.dir/build.make CMakeFiles/FlashAttentionv1.dir/operators/FlashAttention/flashattentionv1.cu.s
+.PHONY : operators/FlashAttention/flashattentionv1.cu.s
+
+operators/FlashAttention/native.o: operators/FlashAttention/native.cu.o
+.PHONY : operators/FlashAttention/native.o
+
+# target to build an object file
+operators/FlashAttention/native.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlashAttention_native.dir/build.make CMakeFiles/FlashAttention_native.dir/operators/FlashAttention/native.cu.o
+.PHONY : operators/FlashAttention/native.cu.o
+
+operators/FlashAttention/native.i: operators/FlashAttention/native.cu.i
+.PHONY : operators/FlashAttention/native.i
+
+# target to preprocess a source file
+operators/FlashAttention/native.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlashAttention_native.dir/build.make CMakeFiles/FlashAttention_native.dir/operators/FlashAttention/native.cu.i
+.PHONY : operators/FlashAttention/native.cu.i
+
+operators/FlashAttention/native.s: operators/FlashAttention/native.cu.s
+.PHONY : operators/FlashAttention/native.s
+
+# target to generate assembly for a file
+operators/FlashAttention/native.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlashAttention_native.dir/build.make CMakeFiles/FlashAttention_native.dir/operators/FlashAttention/native.cu.s
+.PHONY : operators/FlashAttention/native.cu.s
+
 operators/GEMM/Register_GEMM.o: operators/GEMM/Register_GEMM.cu.o
 .PHONY : operators/GEMM/Register_GEMM.o
 
@@ -365,6 +465,54 @@ operators/MatrixTranspose/MatrixTranspose.s: operators/MatrixTranspose/MatrixTra
 operators/MatrixTranspose/MatrixTranspose.cu.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixTranspose.dir/build.make CMakeFiles/MatrixTranspose.dir/operators/MatrixTranspose/MatrixTranspose.cu.s
 .PHONY : operators/MatrixTranspose/MatrixTranspose.cu.s
+
+operators/WMMA/TiledWMMA.o: operators/WMMA/TiledWMMA.cu.o
+.PHONY : operators/WMMA/TiledWMMA.o
+
+# target to build an object file
+operators/WMMA/TiledWMMA.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledWMMA.dir/build.make CMakeFiles/TiledWMMA.dir/operators/WMMA/TiledWMMA.cu.o
+.PHONY : operators/WMMA/TiledWMMA.cu.o
+
+operators/WMMA/TiledWMMA.i: operators/WMMA/TiledWMMA.cu.i
+.PHONY : operators/WMMA/TiledWMMA.i
+
+# target to preprocess a source file
+operators/WMMA/TiledWMMA.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledWMMA.dir/build.make CMakeFiles/TiledWMMA.dir/operators/WMMA/TiledWMMA.cu.i
+.PHONY : operators/WMMA/TiledWMMA.cu.i
+
+operators/WMMA/TiledWMMA.s: operators/WMMA/TiledWMMA.cu.s
+.PHONY : operators/WMMA/TiledWMMA.s
+
+# target to generate assembly for a file
+operators/WMMA/TiledWMMA.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TiledWMMA.dir/build.make CMakeFiles/TiledWMMA.dir/operators/WMMA/TiledWMMA.cu.s
+.PHONY : operators/WMMA/TiledWMMA.cu.s
+
+operators/WMMA/main.o: operators/WMMA/main.cu.o
+.PHONY : operators/WMMA/main.o
+
+# target to build an object file
+operators/WMMA/main.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wmma.dir/build.make CMakeFiles/wmma.dir/operators/WMMA/main.cu.o
+.PHONY : operators/WMMA/main.cu.o
+
+operators/WMMA/main.i: operators/WMMA/main.cu.i
+.PHONY : operators/WMMA/main.i
+
+# target to preprocess a source file
+operators/WMMA/main.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wmma.dir/build.make CMakeFiles/wmma.dir/operators/WMMA/main.cu.i
+.PHONY : operators/WMMA/main.cu.i
+
+operators/WMMA/main.s: operators/WMMA/main.cu.s
+.PHONY : operators/WMMA/main.s
+
+# target to generate assembly for a file
+operators/WMMA/main.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wmma.dir/build.make CMakeFiles/wmma.dir/operators/WMMA/main.cu.s
+.PHONY : operators/WMMA/main.cu.s
 
 operators/reduction/WarpShuffleReduction.o: operators/reduction/WarpShuffleReduction.cu.o
 .PHONY : operators/reduction/WarpShuffleReduction.o
@@ -494,16 +642,26 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... FlashAttention_native"
+	@echo "... FlashAttentionv1"
 	@echo "... GEMM_Register"
 	@echo "... GEMM_memory"
 	@echo "... GEMM_native"
 	@echo "... LayerNorm"
 	@echo "... MatrixTranspose"
 	@echo "... Softmax"
+	@echo "... TiledWMMA"
 	@echo "... WarpShuffleReduction"
 	@echo "... WarpShuffleReduction_alltoone"
 	@echo "... reduction"
 	@echo "... vector_add"
+	@echo "... wmma"
+	@echo "... operators/FlashAttention/flashattentionv1.o"
+	@echo "... operators/FlashAttention/flashattentionv1.i"
+	@echo "... operators/FlashAttention/flashattentionv1.s"
+	@echo "... operators/FlashAttention/native.o"
+	@echo "... operators/FlashAttention/native.i"
+	@echo "... operators/FlashAttention/native.s"
 	@echo "... operators/GEMM/Register_GEMM.o"
 	@echo "... operators/GEMM/Register_GEMM.i"
 	@echo "... operators/GEMM/Register_GEMM.s"
@@ -519,6 +677,12 @@ help:
 	@echo "... operators/MatrixTranspose/MatrixTranspose.o"
 	@echo "... operators/MatrixTranspose/MatrixTranspose.i"
 	@echo "... operators/MatrixTranspose/MatrixTranspose.s"
+	@echo "... operators/WMMA/TiledWMMA.o"
+	@echo "... operators/WMMA/TiledWMMA.i"
+	@echo "... operators/WMMA/TiledWMMA.s"
+	@echo "... operators/WMMA/main.o"
+	@echo "... operators/WMMA/main.i"
+	@echo "... operators/WMMA/main.s"
 	@echo "... operators/reduction/WarpShuffleReduction.o"
 	@echo "... operators/reduction/WarpShuffleReduction.i"
 	@echo "... operators/reduction/WarpShuffleReduction.s"

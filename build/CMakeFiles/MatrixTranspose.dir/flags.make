@@ -6,5 +6,5 @@ CUDA_DEFINES =
 
 CUDA_INCLUDES = -I/root/cuda_projects/include
 
-CUDA_FLAGS =  --generate-code=arch=compute_52,code=[compute_52,sm_52] -std=c++17
+CUDA_FLAGS =  --generate-code=arch=compute_86,code=[compute_86,sm_86] -std=c++17
 

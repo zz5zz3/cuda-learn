@@ -1,18 +1,19 @@
 {
-  "configurations": [
-    {
-      "name": "linux-gcc-x64",
-      "includePath": [
-        "${workspaceFolder}/**"
-      ],
-      "compilerPath": "/usr/bin/gcc",
-      "cStandard": "${default}",
-      "cppStandard": "${default}",
-      "intelliSenseMode": "linux-gcc-x64",
-      "compilerArgs": [
-        ""
-      ]
-    }
-  ],
-  "version": 4
+    "configurations": [
+        {
+            "name": "CUDA-11.8",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/local/cuda-11.8/targets/x86_64-linux/include"
+            ],
+            "compilerPath": "/usr/local/cuda-11.8/bin/nvcc",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerArgs": [
+                "-arch=sm_86"
+            ]
+        }
+    ],
+    "version": 4
 }

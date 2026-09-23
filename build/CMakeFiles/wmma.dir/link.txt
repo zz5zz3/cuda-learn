@@ -1,0 +1,1 @@
+/usr/bin/g++ CMakeFiles/wmma.dir/operators/WMMA/main.cu.o -o wmma  -lcudadevrt -lcudart_static -lrt -lpthread -ldl  -L"/usr/local/cuda-11.8/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda-11.8/targets/x86_64-linux/lib"

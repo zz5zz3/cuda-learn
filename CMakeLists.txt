@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 
-
+set(CMAKE_CUDA_ARCHITECTURES 86)
 # ============================================================
 # 公共函数：添加一个 CUDA 可执行程序
 # ============================================================
@@ -85,4 +85,27 @@ add_cuda_demo(Softmax
 # ============================================================
 add_cuda_demo(LayerNorm
     operators/LayerNorm/main.cu
+)
+
+# ============================================================
+# FlashAttention
+# ============================================================
+add_cuda_demo(FlashAttention_native
+    operators/FlashAttention/native.cu
+)
+
+add_cuda_demo(FlashAttentionv1
+    operators/FlashAttention/flashattentionv1.cu
+)
+
+
+# ============================================================
+# Tensorcore
+# ============================================================
+add_cuda_demo(wmma
+    operators/WMMA/main.cu
+)
+
+add_cuda_demo(TiledWMMA
+    operators/WMMA/TiledWMMA.cu
 )
